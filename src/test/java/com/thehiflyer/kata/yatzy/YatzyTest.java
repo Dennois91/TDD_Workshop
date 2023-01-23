@@ -2,17 +2,22 @@ package com.thehiflyer.kata.yatzy;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class YatzyTest {
 
     private YatzyScorer yatzyScorer;
     private YatzyRoll yatzyRoll;
 
-	@BeforeEach
-	public void setUp() {
-		yatzyScorer = new YatzyScorer();
-	}
+    @BeforeEach
+    public void setUp() {
+        yatzyScorer = new YatzyScorer();
+        yatzyRoll = new YatzyRoll(1, 1, 1, 1, 1);
+    }
 
     @Test
     public void chanceScoreIsTheSumOfTheDice() {
